@@ -1,0 +1,10 @@
+@import "./variable";
+
+.flash-box {
+  width: 100%;
+  background-color: $lightblue;
+  .notice{
+    color: white;
+    text-align: center;
+  }
+}
