@@ -52,14 +52,12 @@
             2019/06/22(Sat) 22:41:17
         %p.message__text
           message
-    = form_tag('group_message_path(current_group)', method: :post) do
-      .input-box
-        %label#message_content
-          = text_field_tag :content
-        .input-box__image
-          %i.fa.fa-image
-      .submit-btn
-        = submit_tag("submit")
-      
-      
-           
+    .form-message
+      = form_tag('group_message_path(current_group)', method: :post) do
+        .input-box
+          %input#message_content
+          %label.input-box__image
+            %i.fa.fa-image
+          %input#filesend
+        .submit-btn
+          = submit_tag("Send")
