@@ -54,7 +54,7 @@
           message
     = form_tag('group_message_path(current_group)', method: :post) do
       .input-box
-        #message_content
+        %label#message_content
           = text_field_tag :content
         .input-box__image
           %i.fa.fa-image

@@ -1,0 +1,41 @@
+@import "./variable";
+
+.chat-main {
+  height: 100%;
+  padding-top: 24px;
+  width: calc(100% - 300px);
+  float: right;
+  .main-header {
+    border-bottom: solid;
+    border-color: #eeeeee;
+    padding: 0 40px;
+    position: relative;
+    #current_group {
+      padding-top: 35px;
+      color: #333333;
+      font-size: 20px;
+    }
+    .main-header__left-box__member-list {
+      padding-top: 15px;
+      color: #999999;
+      font-size: 12px;
+      .main-header__left-box__member-list__member {
+        padding-left: 15px;
+        display:  inline-block;
+      }
+    }
+    .main-header__edit-btn {
+      position: absolute;
+      right: 40px;
+      top: 28px;
+      display: inline-block;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      border: solid;
+      border-color: $lightblue;
+      border-width: thin;
+      color: $lightblue;
+    }
+  }
+}
