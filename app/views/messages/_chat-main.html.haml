@@ -1,7 +1,7 @@
 .chat-main
   .main-header
     .main-header__left-box
-      %h2#current_group
+      %h2.current_group
         test
       %ul.main-header__left-box__member-list
         Member:
@@ -22,7 +22,7 @@
   .form-message
     = form_tag('group_message_path(current_group)', method: :post) do
       .input-box
-        %input#message_content
+        %input.message_content
         %label.input-box__image
           %i.fa.fa-image
         %input#filesend
