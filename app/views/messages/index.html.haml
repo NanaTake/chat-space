@@ -3,62 +3,6 @@
     グループを作成しました
 
 %div.wrapper
-  .chat-side
+  = render partial: 'chat-side'
 
-    .side-header
-      .side-header__box
-        %p.side-header__box__user-name
-          ユーザー名
-        %ul.side-header__box__menu
-          %li.side-header__box__menu__new-group
-            = link_to 'new_group_path' do
-              %i.fa.fa-edit
-          %li.side-header__box__menu__edit-user
-            = link_to 'user_edit_path(current_user)' do
-              %i.fa.fa-cog
-
-    .groups
-      = link_to 'group_message_path' do
-        %p.group__group-name
-          グループ名
-      %p.group__latest-message
-        最新のメッセージ
-
-    .groups
-      = link_to 'group_message_path' do
-        %p.group__group-name
-          グループ名
-      %p.group__latest-message
-        最新のメッセージ
-
-  .chat-main
-    .main-header
-      .main-header__left-box
-        %h2#current_group
-          test
-        %ul.main-header__left-box__member-list
-          Member:
-          %li.main-header__left-box__member-list__member
-            ユーザー名
-      = link_to 'group_edit_path' do
-        .main-header__edit-btn
-          Edit
-    .messages
-      .message
-        .message__upper-info
-          %p.message__upper-info__talker
-            ユーザー名
-          %p.message__upper-info__date
-            2019/06/22(Sat) 22:41:17
-        %p.message__text
-          message
-    .form-message
-      = form_tag('group_message_path(current_group)', method: :post) do
-        .input-box
-          %input#message_content
-            -# type a message
-          %label.input-box__image
-            %i.fa.fa-image
-          %input#filesend
-        .submit-btn
-          Send
+  = render partial: 'chat-main'

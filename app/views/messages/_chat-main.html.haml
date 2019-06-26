@@ -1,0 +1,30 @@
+.chat-main
+  .main-header
+    .main-header__left-box
+      %h2#current_group
+        test
+      %ul.main-header__left-box__member-list
+        Member:
+        %li.main-header__left-box__member-list__member
+          ユーザー名
+    = link_to 'group_edit_path' do
+      .main-header__edit-btn
+        Edit
+  .messages
+    .message
+      .message__upper-info
+        %p.message__upper-info__talker
+          ユーザー名
+        %p.message__upper-info__date
+          2019/06/22(Sat) 22:41:17
+      %p.message__text
+        message
+  .form-message
+    = form_tag('group_message_path(current_group)', method: :post) do
+      .input-box
+        %input#message_content
+        %label.input-box__image
+          %i.fa.fa-image
+        %input#filesend
+      .submit-btn
+        Send
