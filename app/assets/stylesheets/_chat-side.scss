@@ -17,7 +17,7 @@
       padding-right: 20px;
       .side-header__box__user-name {
         width: 100px;
-        color: #ffffff;
+        color: $white;
         font-size: 16px;
         font-weight: bold;
         float: left;
@@ -30,13 +30,13 @@
           float: left;
           margin-left: 120px;
           .fa-edit {
-            color: #ffffff;
+            color: $white;
           }
         }
         .side-header__box__menu__edit-user {
           float: right;
           .fa-cog {
-            color: #ffffff;
+            color: $white;
           }
         }
       }  
@@ -45,15 +45,15 @@
   .groups {
     padding: 20px 20px;
     .group__group-name {
-      color: #ffffff;
+      color: $white;
       font-size: 15px;
       font-weight: bold;
       text-decoration: none;
     }
     .group__latest-message {
+      color: $white;
       margin-top: 5px;
       margin-bottom: 35px;
-      color: #ffffff;
       font-size: 11px;
       font-weight: bold;
     }
