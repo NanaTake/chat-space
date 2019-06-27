@@ -1,6 +1,8 @@
+@import "./variable";
+
 .notification {
   .notice {
-    background-color: $light_blue;
+    background-color: $lightblue;
     color: $white;
     text-align: center;
   }
