@@ -6,7 +6,7 @@
       %ul.main-header__left-box__member-list
         Member:
         %li.main-header__left-box__member-list__member
-          ユーザー名
+          = current_user.name
     = link_to 'group_edit_path' do
       .main-header__edit-btn
         Edit
