@@ -22,9 +22,9 @@
   .form-message
     = form_tag('group_message_path(current_group)', method: :post) do
       .input-box
-        %input.message_content
+        %input.message_content{name: "body", placeholder: "type a message", type: "text"}/
         %label.input-box__image
           %i.fa.fa-image
-        %input#filesend
-      .submit-btn
-        Send
+        %input#filesend{name: "image", placeholder: "type a image-url", type: "text"}
+      .submit
+        %input.btn{type: "submit", value: "Send" }/
