@@ -1,6 +1,7 @@
 @import "./variable";
 
 .notification {
+  z-index: 3;
   .notice {
     background-color: $lightblue;
     color: $white;

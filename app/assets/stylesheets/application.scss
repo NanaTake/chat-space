@@ -14,12 +14,12 @@
  *= require_self
  */
 
-
+@import "./variable";
 @import "./reset";
+
 
 @import "font-awesome";
 
-@import "./variable";
 @import "./side_bar";
 @import "./chat-main";
 @import "./user";
@@ -32,9 +32,8 @@ body,html {
   width: 100%;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.wrapper {
-  height: 100%;
-  width: 100%;
-}
+// .wrapper {
+// }
