@@ -2,15 +2,17 @@
 
 .chat-main {
   background-color: $warm;
-  height: 100%;
-  width: calc(100% - 300px);
   float: right;
-  box-sizing: border-box;
+  width: calc(100% - 300px);
+  height:100vh;
+  left: 300px;
   .main-header {
+    background-color: $white;
     border-bottom: solid;
     border-color: $gray;
     padding: 0 40px;
-    position: relative;
+    position: fixed;
+    width: calc(100% - 300px);
     .current_group {
       padding-top: 35px;
       color: #333333;
@@ -27,8 +29,8 @@
     }
     &__edit-btn {
       position: absolute;
-      right: 40px;
       top: 28px;
+      right: 120px;
       display: inline-block;
       height: 40px;
       line-height: 40px;
@@ -39,32 +41,29 @@
       color: $lightblue;
     }
   }
-  .messages {
+  .message {
     background-color: #FAFAFA;
-    box-sizing: border-box;
-    padding: 46px 40px 0;
-    height: calc(100% - 100px - 90px);
-    .message {
-      .upper-message {
-        display: flex;
-        &__user-name {
-          color: $f-black;
-          font-size: 16px;
-          font-weight: bold;
-        }
-        &__date {
-          color: $f-gray;
-          font-size: 12px;
-          padding-left: 10px;
-        }
+    padding: 100px 40px 136px;
+    .upper-message {
+      padding-top: 46px;
+      display: flex;
+      &__user-name {
+        color: $f-black;
+        font-size: 16px;
+        font-weight: bold;
       }
-      .lower-message {
-        margin-top: 10px;
-        &__content {
-          color: $f-black;
-          font-size: 14px;
-          margin-bottom: 40px;
-        }
+      &__date {
+        color: $f-gray;
+        font-size: 12px;
+        padding-left: 10px;
+      }
+    }
+    .lower-message {
+      padding-top: 10px;
+      &__content {
+        color: $f-black;
+        font-size: 14px;
+        // padding-bottom: 40px;
       }
     }
   }
@@ -73,6 +72,9 @@
     box-sizing: border-box;
     height: 90px;
     padding: 20px 50px 20px 40px;
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 300px);
     &__message {
       border: none;
       float: left;
