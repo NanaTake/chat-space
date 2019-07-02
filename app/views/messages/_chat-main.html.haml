@@ -35,13 +35,13 @@
   -#         = message.content
   -#     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
   .form
-    = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'form__message', placeholder: '  type a message'
-      .form__mask
-        = f.label :image, class: 'form__mask__image' do
+    = form_for [@group, @message], class: 'form__form-for' do |f|
+      = f.text_field :content, class: 'form__form-for__message', placeholder: '  type a message'
+      .form__form-for__mask
+        = f.label :image, class: 'form__form-for__mask__image' do
           = fa_icon 'picture-o', class: 'icon'
           = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', class: 'form__submit'
+      = f.submit 'Send', class: 'form__form-for__submit'
 
   -# .form-message
   -#   = form_tag('group_message_path(current_group)', method: :post) do
