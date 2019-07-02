@@ -1,7 +1,15 @@
-$(function(){
-  $('.form__form-for').on('submit', function(e){
+$(document).on('turbolinks:load', function(){
+  $('.form').on('submit', function(e){
     e.preventDefault();
-    console.log(this);
-    var formData = new FormData(this);
+    var formdata = new FormData(this);
+    var url = $(this).attr('action')
+    $.ajax({  
+      url: url,
+      type: 'POST',
+      data: message,
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    })
   })
-})  
+});
