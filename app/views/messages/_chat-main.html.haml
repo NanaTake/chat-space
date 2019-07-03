@@ -10,6 +10,7 @@
     = link_to 'group_edit_path' do
       .main-header__edit-btn
         Edit
+
   .messages
     - if @messages
       - @messages.each do |message|
@@ -24,17 +25,7 @@
               .lower-message__content
                 = message.content
             = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
-  -# .messages
-  -#   .message
-  -#     .message__upper-info
-  -#       %p.message__upper-info__talker
-  -#         = message.user.name
-  -#       %p.message__upper-info__date
-  -#         = message.created_at.strftime("%Y/%m/%d %H:%M")
-  -#     - if message.content.present?
-  -#       %p.message__text
-  -#         = message.content
-  -#     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+  
   .form
     = form_for [@group, @message], class: 'form__form-for' do |f|
       = f.text_field :content, class: 'form__form-for__message', placeholder: '  type a message'
@@ -43,17 +34,4 @@
           = fa_icon 'picture-o', class: 'icon'
           = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'form__form-for__submit'
-
-  -# .form-message
-  -#   = form_tag('group_message_path(current_group)', method: :post) do
-  -#     .input-box
-  -#       %input.message_content
-  -#       %input.message_content{name: "body", placeholder: "type a message", type: "text"}/
-  -#       %label.input-box__image
-  -#         %i.fa.fa-image
-  -#       %input#filesend
-  -#     .submit-btn
-  -#       Send
-  -#       %input#filesend{name: "image", placeholder: "type a image-url", type: "text"}
-  -#     .submit
-  -#       %input.btn{ type: "submit", value: "Send" }/
+      

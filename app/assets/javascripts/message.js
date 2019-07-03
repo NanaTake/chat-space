@@ -7,12 +7,12 @@ $(document).on('turbolinks:load', function(){
                     <p class="upper-message__user-name">
                       ${message.user_name}
                     </p>
-                    <p class="message__date">
+                    <p class="upper-message__date">
                       ${message.date}
                     </p>
                   </div>
                   <p class="lower-message">
-                    <div>
+                    <div class="lower-message__content">
                     ${content}
                     </div>
                     ${img}
