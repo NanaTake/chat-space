@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   resources :groups,     only: [:index, :new, :create, :edit, :update] do
     resources :messages, only: [:index, :create]
   end
+
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 end
