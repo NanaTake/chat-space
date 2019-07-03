@@ -1,6 +1,8 @@
 @import "./variable";
 
 .notification {
+  position: fixed;
+  width: 100%;
   z-index: 3;
   .notice {
     background-color: $lightblue;
