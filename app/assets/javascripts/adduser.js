@@ -11,14 +11,13 @@ $(document).on('turbolinks:load', function(){
   $(document).on("click", ".user-search-add", function (e) {
     var user = $(this).parent('.chat-group-user.clearfix');
     var id = user.children('.user-search-add').attr('data-user-id');
-    var name = user.children(".chat-group-user__name.search").text();
+    var name = user.children(".chat-group-user__name").text();
     buildHTML(name, id);
     $("#user-search-result").empty();
   });
 
   $(document).on('click', '.user-search-remove', function() {
-    var me = $(this),
-        kw = me.closest('.chat-group-user.clearfix.js-chat-member');
-    kw.remove();
+    var remove_user = $(this).parent('.chat-group-user.clearfix.js-chat-member');
+    remove_user.remove();
 });
 });
