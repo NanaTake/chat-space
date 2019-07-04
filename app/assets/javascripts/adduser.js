@@ -9,9 +9,9 @@ $(document).on('turbolinks:load', function(){
   }
 
   $(document).on("click", ".user-search-add", function (e) {
-    e.preventDefault();
-    var name = $(".chat-group-user__name.search").text();
-    var id = $(".user-search-add").data('data-user-id');
+    var user = $(this).parent('.chat-group-user.clearfix');
+    var id = user.children('.user-search-add').attr('data-user-id');
+    var name = user.children(".chat-group-user__name.search").text();
     buildHTML(name, id);
     $("#user-search-result").empty();
   });
