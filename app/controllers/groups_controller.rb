@@ -18,9 +18,12 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    set_group
+    @users = @group.users
   end
 
   def update
+    set_group
     if @group.update(group_params)
       redirect_to group_messages_path(@group), notice: 'グループを編集しました'
     else
