@@ -9,6 +9,7 @@ $(document).on('turbolinks:load', function(){
   }
 
   $(document).on("click", ".user-search-add", function (e) {
+    e.preventDefault();
     var user = $(this).parent('.chat-group-user.clearfix');
     var id = user.children('.user-search-add').attr('data-user-id');
     var name = user.children(".chat-group-user__name").text();
@@ -19,5 +20,5 @@ $(document).on('turbolinks:load', function(){
   $(document).on('click', '.user-search-remove', function() {
     var remove_user = $(this).parent('.chat-group-user.clearfix.js-chat-member');
     remove_user.remove();
-});
+  });
 });
