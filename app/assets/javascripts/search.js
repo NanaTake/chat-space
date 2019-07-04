@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function(){
   function buildHTML(datafromsearch){
     let html = `<div class="chat-group-user clearfix">
-                  <p class="chat-group-user__name">
+                  <p class="chat-group-user__name search">
                     ${datafromsearch.name}
                   </p>
                   <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${datafromsearch.id}" data-user-name="${datafromsearch.name}" >
