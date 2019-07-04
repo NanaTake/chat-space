@@ -5,7 +5,7 @@ $(document).on('turbolinks:load', function(){
                   <p class='chat-group-user__name'>${name}</p>
                   <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
                 </div>`
-    $(".chat-group-form__field--right.add-position").append(html);
+    $("#chat-group-users").append(html);
   }
 
   $(document).on("click", ".user-search-add", function (e) {
