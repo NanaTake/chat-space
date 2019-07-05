@@ -11,10 +11,10 @@
       .main-header__edit-btn
         Edit
 
-  .messages{"data-message-id": "#{message.id}"}
+  .messages
     - if @messages
       - @messages.each do |message|
-        .message
+        .message{"data-message-id": "#{message.id}"}
           .upper-message
             %p.upper-message__user-name
               = message.user.name
