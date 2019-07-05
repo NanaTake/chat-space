@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function(){
   function buildHTML(message) {
-    var content = (message.content !== null) ? `${ message.content }` : `""`;
+    var content = (message.content !== null) ? `${ message.content }` : "" ;
 
     var image = (message.image.url !== null) ? `<img class= "lower-message__image" src= "${message.image.url}" >` : "" ;
 
