@@ -9,7 +9,7 @@ $(document).on('turbolinks:load', function(){
     if (message.image.url !== null){
       var image = `<img class= "lower-message__image" src= "${message.image.url}" >`;
     } else {
-      var image = `<span></span>`
+      var image = `<p></p>`
     }
 
     var html = `<div class="message" data-message-id: "${message.id}">
@@ -30,6 +30,7 @@ $(document).on('turbolinks:load', function(){
                 </div>`
   return html;
   }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formdata = new FormData(this);
