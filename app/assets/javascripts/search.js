@@ -1,5 +1,4 @@
-// $(document).on('turbolinks:load', function(){
-$(function(){
+$(document).on('turbolinks:load', function(){
   function buildHTML(datafromsearch){
     let html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">
