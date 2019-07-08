@@ -3,7 +3,6 @@ $(document).on('turbolinks:load', function(){
     var content = (message.content !== null) ? `${ message.content }` : "" ;
 
     var image = (message.image.url !== null) ? `<img class= "lower-message__image" src= "${message.image.url}" >` : "" ;
-
     var html = `<div class="message" data-message-id: "${message.id}">
                   <div class="upper-message">
                     <p class="upper-message__user-name">
@@ -50,28 +49,31 @@ $(document).on('turbolinks:load', function(){
   })
 
   var reloadMessages = function () {
-    if (window.location.href.match(/\/groups\/\d+\/messages/)){
-      var last_message_id = $('.message:last').data("message-id");
+    $(document).ready(function() {
+      if (window.location.href.match(/\/groups\/\d+\/messages/)){
+        var last_message_id = $('.message:last').data("message-id");
+        console.log(last_message_id);
 
-      $.ajax({
-        url: "api/messages",
-        type: 'get',
-        dataType: 'json',
-        data: {last_id: last_message_id}
-      })
-
-      .done(function (messages) {
-        var insertHTML = '';
-        messages.forEach(function (message) {
-          insertHTML = buildHTML(message);
-          $('.messages').append(insertHTML);
+        $.ajax({
+          url: "api/messages",
+          type: 'get',
+          dataType: 'json',
+          data: {last_id: last_message_id}
         })
-        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-      })
-      .fail(function () {
-        alert('自動更新に失敗しました');
-      });
-    }
+
+        .done(function (messages) {
+          var insertHTML = '';
+          messages.forEach(function (message) {
+            insertHTML = buildHTML(message);
+            $('.messages').append(insertHTML);
+          })
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+        })
+        .fail(function () {
+          alert('自動更新に失敗しました');
+        });
+      }
+    });
   };
   setInterval(reloadMessages, 5000);
 });

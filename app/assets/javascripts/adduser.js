@@ -8,11 +8,15 @@ $(document).on('turbolinks:load', function(){
     $("#chat-group-users").append(html);
   }
 
-  $(document).on("click", ".user-search-add", function (e) {
+  $(document).on("click", ".user-search-add.chat-group-user__btn.chat-group-user__btn--add", function (e) {
     e.preventDefault();
+    console.log("add");
     var user = $(this).parent('.chat-group-user.clearfix');
-    var id = user.children('.user-search-add').attr('data-user-id');
+    console.log(user);
+    var id = user.children('.user-search-add.chat-group-user__btn.chat-group-user__btn--add').attr('data-user-id');
+    console.log(id);
     var name = user.children(".chat-group-user__name").text();
+    console.log(name);
     buildHTML(name, id);
     $("#user-search-result").empty();
   });
