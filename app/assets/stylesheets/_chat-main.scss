@@ -6,6 +6,7 @@
   width: calc(100% - 300px);
   height:100vh;
   left: 300px;
+  box-sizing: border-box;
   .main-header {
     background-color: $white;
     border-bottom: solid;
@@ -46,6 +47,7 @@
     padding: 100px 40px 136px;
     height: 100%;
     overflow: auto;
+    box-sizing: border-box;
     .message {
       .upper-message {
         padding-top: 46px;
