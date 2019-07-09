@@ -6,6 +6,7 @@
   width: calc(100% - 300px);
   height:100vh;
   left: 300px;
+  overflow: auto;
   .main-header {
     background-color: $white;
     border-bottom: solid;
@@ -44,8 +45,8 @@
   .messages {
     background-color: #FAFAFA;
     padding: 100px 40px 136px;
-    height: 100%;
-    overflow: auto;
+    // height: 100%;
+    // overflow: auto;
     .message {
       .upper-message {
         padding-top: 46px;

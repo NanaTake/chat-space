@@ -37,7 +37,7 @@ $(document).on('turbolinks:load', function(){
       var html = buildHTML(data);
       $('.messages').append(html);
       $('#new_message')[0].reset();
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+      $('.chat-main').animate({scrollTop: $('.chat-main')[0].scrollHeight}, 'fast');
     })
     .fail(function(){
       alert('エラーが発生したためメッセージは送信できませんでした。');
@@ -51,7 +51,6 @@ $(document).on('turbolinks:load', function(){
     $(document).ready(function() {
       if (window.location.href.match(/\/groups\/\d+\/messages/)){
         var last_message_id = $('.message:last').data("message-id");
-        console.log(last_message_id);
 
         $.ajax({
           url: "api/messages",
@@ -66,7 +65,7 @@ $(document).on('turbolinks:load', function(){
             insertHTML = buildHTML(message);
             $('.messages').append(insertHTML);
           })
-          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+          $('.chat-main').animate({scrollTop: $('.chat-main')[0].scrollHeight}, 'fast');
         })
         .fail(function () {
           alert('自動更新に失敗しました');
