@@ -16,7 +16,7 @@ $(document).on('turbolinks:load', function(){
     $("#user-search-result").append(html);
   }
   
-  $(".chat-group-form__input").on("keyup", function() {
+  $(".chat-group-form__search.clearfix").on("keyup", function() {
     var input = $("#user-search-field").val();
 
     $.ajax({
