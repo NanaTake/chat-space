@@ -17,28 +17,29 @@ $(document).on('turbolinks:load', function(){
   }
   
   $(document).on("keyup","#user-search-field", function() {
+    $("#user-search-result").empty();
     var input = $("#user-search-field").val();
+    if (input.length !== 0) {
+      $.ajax({
+        type: 'GET',
+        url: '/users/search',
+        data: { keyword: input },
+        dataType: 'json'
+      })
 
-    $.ajax({
-      type: 'GET',
-      url: '/users/search',
-      data: { keyword: input },
-      dataType: 'json'
-    })
-
-    .done(function(users) {
-      $("#user-search-result").empty();
-      if (users.length !== 0) {
-        users.forEach(function(data){
-          buildHTML(data);
-        });
-      }
-      else {
-        NoResult("一致するユーザーが見つかりません");   
-      }
-    })
-    .fail(function() {
-      alert('ユーザー検索に失敗しました');
-    });
+      .done(function(users) {
+        if (users.length !== 0) {
+          users.forEach(function(data){
+            buildHTML(data);
+          });
+        }
+        else {
+          NoResult("一致するユーザーが見つかりません");   
+        }
+      })
+      .fail(function() {
+        alert('ユーザー検索に失敗しました');
+      });
+    } 
   });
 });
