@@ -10,10 +10,4 @@
         = link_to edit_user_path(current_user), data:{turbolinks: :false} do
           = fa_icon 'cog', class: 'icon'
   .groups
-    - current_user.groups.each do |group|
-      .group
-        = link_to group_messages_path(group) do
-          .group__name
-            = group.name
-          .group__message
-            = group.show_last_message
+    = render partial: 'devise/shared/group', collection: current_user.groups
